@@ -3,38 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madhuswarn Naturals</title>
+<title>Madhuswarn Naturals | Premium Raw Honey</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#faf7f2;color:#333;line-height:1.6}
-header{position:fixed;top:0;width:100%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);z-index:1000}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 8%}
-.logo{font-size:28px;font-weight:bold;color:#d4a017}
-.nav a{text-decoration:none;color:#333;margin-left:18px}
-.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;background-position:center}
-.hero h1{font-size:64px}
-.hero p{margin:20px 0;font-size:20px}
-.btn{display:inline-block;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:bold}
-.gold{background:#d4a017;color:#fff}
-.green{background:#25D366;color:#fff}
-.section{padding:90px 8%}
-.title{text-align:center;color:#2e7d32;font-size:38px;margin-bottom:40px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.card img{width:100%;height:250px;object-fit:cover}
-.card-content{padding:20px}
-.price{font-size:28px;color:#2e7d32;font-weight:bold;margin:10px 0}
-.order{display:block;text-align:center;background:#25D366;color:#fff;text-decoration:none;padding:12px;border-radius:10px}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.feature{background:#fff;padding:25px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.05);text-align:center}
-.review{background:#fff;padding:20px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
-.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-footer{background:#1f4f27;color:#fff;text-align:center;padding:40px}
-.whatsapp{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:14px 20px;border-radius:40px;text-decoration:none}
+:root{
+--gold:#D4A017;
+--green:#2E7D32;
+--cream:#FAF7F2;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:var(--cream);color:#333}
+header{
+position:fixed;top:0;width:100%;z-index:1000;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(10px);
+}
+.nav{max-width:1200px;margin:auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:30px;font-weight:700;color:var(--gold)}
+.nav a{text-decoration:none;color:#333;margin-left:20px;font-weight:500}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1800&q=80');
+background-size:cover;background-position:center;
+display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+padding:20px;
+}
+.hero-content{max-width:850px}
+.badge{display:inline-block;padding:10px 18px;border-radius:30px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px)}
+.hero h1{font-size:72px;line-height:1.05;margin:20px 0}
+.hero p{font-size:20px;margin-bottom:30px}
+.btn{padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:600;display:inline-block;margin:5px}
+.btn-gold{background:var(--gold);color:white}
+.btn-white{background:white;color:#333}
+
+.section{padding:100px 20px;max-width:1200px;margin:auto}
+.title{text-align:center;font-size:42px;color:var(--green);margin-bottom:10px}
+.subtitle{text-align:center;color:#777;margin-bottom:50px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:-70px;position:relative;z-index:2}
+.stat{background:#fff;padding:25px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.08);text-align:center}
+
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
+.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+.card img{width:100%;height:260px;object-fit:cover}
+.content{padding:25px}
+.price{font-size:30px;color:var(--green);font-weight:700;margin:10px 0}
+.order{display:block;text-align:center;text-decoration:none;background:#25D366;color:#fff;padding:14px;border-radius:12px;font-weight:600}
+
+.story{
+display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center
+}
+.story img{width:100%;border-radius:24px}
+
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.feature{background:#fff;padding:30px;border-radius:20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.review{background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+
+.cta{
+background:linear-gradient(135deg,var(--gold),#b98500);
+padding:60px 30px;border-radius:30px;text-align:center;color:white
+}
+
+footer{background:#1f4f27;color:white;text-align:center;padding:50px 20px}
+.float{position:fixed;right:20px;bottom:20px;background:#25D366;color:white;text-decoration:none;padding:15px 22px;border-radius:50px;font-weight:600}
+
 @media(max-width:768px){
-.hero h1{font-size:40px}
+.hero h1{font-size:42px}
+.story{grid-template-columns:1fr}
 .nav{flex-direction:column;gap:10px}
 }
 </style>
@@ -46,7 +85,7 @@ footer{background:#1f4f27;color:#fff;text-align:center;padding:40px}
 <div class="logo">🍯 Madhuswarn</div>
 <div>
 <a href="#products">Products</a>
-<a href="#about">About</a>
+<a href="#story">Our Story</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </div>
@@ -54,83 +93,100 @@ footer{background:#1f4f27;color:#fff;text-align:center;padding:40px}
 </header>
 
 <section class="hero">
-<div>
-<h1>Pure Honey From Nature</h1>
-<p>100% Natural • No Added Sugar • Direct From Beekeepers</p>
-<a class="btn gold" href="#products">Explore Products</a>
-<a class="btn green" href="https://wa.me/918605728989">Order on WhatsApp</a>
+<div class="hero-content">
+<div class="badge">🌿 Pure • Natural • Trusted</div>
+<h1>Premium Raw Honey<br>From Nature's Finest Sources</h1>
+<p>Harvested from trusted beekeepers and delivered with care. No additives. No shortcuts.</p>
+<a href="#products" class="btn btn-gold">Shop Collection</a>
+<a href="https://wa.me/918605728989" class="btn btn-white">Order on WhatsApp</a>
 </div>
 </section>
+
+<div class="section">
+<div class="stats">
+<div class="stat"><h2>100%</h2><p>Natural Honey</p></div>
+<div class="stat"><h2>500+</h2><p>Happy Customers</p></div>
+<div class="stat"><h2>Pan India</h2><p>Delivery</p></div>
+<div class="stat"><h2>Fresh</h2><p>Farm Sourced</p></div>
+</div>
+</div>
 
 <section class="section" id="products">
-<h2 class="title">Our Honey Collection</h2>
+<h2 class="title">Best Sellers</h2>
+<p class="subtitle">Choose your perfect honey pack</p>
 
 <div class="products">
-
 <div class="card">
 <img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=900&q=80">
-<div class="card-content">
+<div class="content">
 <h3>Raw Honey 250g</h3>
-<p>Pure and natural honey.</p>
 <div class="price">₹299</div>
-<a class="order" href="https://wa.me/918605728989?text=I%20want%20to%20order%20Raw%20Honey%20250g">Order Now</a>
+<a class="order" href="https://wa.me/918605728989?text=I want to order Raw Honey 250g">Order Now</a>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=900&q=80">
-<div class="card-content">
+<div class="content">
 <h3>Raw Honey 500g</h3>
-<p>Most popular family pack.</p>
 <div class="price">₹499</div>
-<a class="order" href="https://wa.me/918605728989?text=I%20want%20to%20order%20Raw%20Honey%20500g">Order Now</a>
+<a class="order" href="https://wa.me/918605728989?text=I want to order Raw Honey 500g">Order Now</a>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=900&q=80">
-<div class="card-content">
+<div class="content">
 <h3>Raw Honey 1kg</h3>
-<p>Best value pack.</p>
 <div class="price">₹899</div>
-<a class="order" href="https://wa.me/918605728989?text=I%20want%20to%20order%20Raw%20Honey%201kg">Order Now</a>
+<a class="order" href="https://wa.me/918605728989?text=I want to order Raw Honey 1kg">Order Now</a>
 </div>
 </div>
-
 </div>
 </section>
 
-<section class="section" id="about">
-<h2 class="title">Why Choose Madhuswarn?</h2>
+<section class="section" id="story">
+<div class="story">
+<div>
+<h2 class="title" style="text-align:left">Our Story</h2>
+<p>Madhuswarn Naturals brings authentic honey directly from trusted beekeepers to your home. Every batch is carefully sourced, filtered and packed to preserve its natural goodness.</p>
+</div>
+<img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1000&q=80">
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">Why Customers Trust Us</h2>
 <div class="features">
-<div class="feature"><h3>🌿 Natural</h3><p>No preservatives or chemicals.</p></div>
-<div class="feature"><h3>🐝 Farm Sourced</h3><p>Direct from trusted beekeepers.</p></div>
-<div class="feature"><h3>🚚 Delivery</h3><p>Pan India delivery.</p></div>
-<div class="feature"><h3>❤️ Trusted</h3><p>Quality checked and packed.</p></div>
+<div class="feature"><h3>🐝 Direct Sourcing</h3><p>From trusted beekeepers.</p></div>
+<div class="feature"><h3>🌿 No Additives</h3><p>Pure honey, nothing else.</p></div>
+<div class="feature"><h3>🚚 Fast Delivery</h3><p>Across India.</p></div>
+<div class="feature"><h3>❤️ Quality First</h3><p>Packed with care.</p></div>
 </div>
 </section>
 
 <section class="section" id="reviews">
 <h2 class="title">Customer Reviews</h2>
 <div class="reviews">
-<div class="review">⭐⭐⭐⭐⭐ Excellent quality honey.</div>
-<div class="review">⭐⭐⭐⭐⭐ Great taste and packaging.</div>
-<div class="review">⭐⭐⭐⭐⭐ My family loves it.</div>
+<div class="review">⭐⭐⭐⭐⭐ Excellent quality and taste.</div>
+<div class="review">⭐⭐⭐⭐⭐ Packaging was premium and delivery was fast.</div>
+<div class="review">⭐⭐⭐⭐⭐ Best honey we've purchased online.</div>
 </div>
 </section>
 
 <section class="section" id="contact">
-<h2 class="title">Contact Us</h2>
-<p style="text-align:center">📞 +91 86057 28989</p>
-<p style="text-align:center">Order confirmation and payment QR will be shared on WhatsApp.</p>
+<div class="cta">
+<h2>Ready to Order?</h2>
+<p>Click below and we'll confirm your order and share payment details.</p><br>
+<a href="https://wa.me/918605728989" class="btn btn-white">Chat on WhatsApp</a>
+</div>
 </section>
 
 <footer>
 <h3>Madhuswarn Naturals</h3>
-<p>Pure Honey • Healthy Living</p>
+<p>Pure Honey • Natural Living • Trusted Quality</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/918605728989">💬 Order Now</a>
-
+<a class="float" href="https://wa.me/918605728989">💬 Order Now</a>
 </body>
 </html>
