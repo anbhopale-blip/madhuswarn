@@ -34,6 +34,7 @@ body{
  color:#333;
 }
 
+/* HEADER */
 header{
  position:fixed;
  top:0;
@@ -76,6 +77,7 @@ header{
  font-weight:600;
 }
 
+/* HERO */
 .hero{
  height:100vh;
  background:
@@ -104,8 +106,8 @@ header{
 }
 
 .btn-gold{background:var(--gold);color:white;}
-.btn-white{background:white;color:#333;}
 
+/* SECTIONS */
 .section{
  max-width:1200px;
  margin:auto;
@@ -117,21 +119,6 @@ header{
  color:var(--green);
  font-size:42px;
  margin-bottom:10px;
-}
-
-/* STATS */
-.stats{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:20px;
-}
-
-.stat{
- background:white;
- padding:25px;
- border-radius:20px;
- text-align:center;
- box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 /* PRODUCTS */
@@ -146,10 +133,6 @@ header{
  border-radius:20px;
  overflow:hidden;
  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.zoom-container{
- overflow:hidden;
 }
 
 .zoom-container img{
@@ -204,11 +187,11 @@ header{
  font-weight:600;
 }
 
-/* STORY */
+/* STORY FIXED LAYOUT */
 .story-wrap{
  display:grid;
  grid-template-columns:1fr 1fr;
- gap:40px;
+ gap:50px;
  align-items:center;
 }
 
@@ -217,18 +200,42 @@ header{
  border-radius:20px;
 }
 
+/* AWARD */
 .award{
- margin-top:40px;
+ margin-top:25px;
  background:white;
- padding:25px;
- border-radius:20px;
- box-shadow:0 10px 25px rgba(0,0,0,.08);
+ padding:20px;
+ border-radius:15px;
+ box-shadow:0 10px 20px rgba(0,0,0,.08);
 }
 
 .award img{
  width:100%;
- border-radius:15px;
+ border-radius:12px;
  margin-top:10px;
+}
+
+/* GALLERY */
+.gallery-page{
+ margin-top:80px;
+}
+
+.gallery-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:15px;
+}
+
+.gallery-grid img{
+ width:100%;
+ height:220px;
+ object-fit:cover;
+ border-radius:15px;
+ transition:0.3s;
+}
+
+.gallery-grid img:hover{
+ transform:scale(1.05);
 }
 
 /* FOOTER */
@@ -267,7 +274,8 @@ footer{
 <div>
 <a href="#products">Products</a>
 <a href="#story">Story</a>
-<button class="lang-btn" onclick="toggleLang()">EN / मराठी</button>
+<a href="#gallery">Gallery</a>
+<button class="lang-btn">EN / मराठी</button>
 </div>
 </div>
 </header>
@@ -275,38 +283,18 @@ footer{
 <!-- HERO -->
 <section class="hero">
 <div>
-<h1 data-en="Pure Sahyadri Forest Honey"
-    data-mr="शुद्ध सह्याद्री वन मध">
-Pure Sahyadri Forest Honey
-</h1>
-
-<p data-en="No additives. Just natural honey."
-   data-mr="कोणतेही मिश्रण नाही. फक्त शुद्ध नैसर्गिक मध.">
-No additives. Just natural honey.
-</p>
-
+<h1>Pure Sahyadri Forest Honey</h1>
+<p>No additives. Just natural honey.</p>
 <a href="#products" class="btn btn-gold">Shop Now</a>
-</div>
-</section>
-
-<!-- STATS -->
-<section class="section">
-<div class="stats">
-<div class="stat"><h2>100%</h2><p>Natural Honey</p></div>
-<div class="stat"><h2>500+</h2><p>Customers</p></div>
-<div class="stat"><h2>Pan India</h2><p>Delivery</p></div>
-<div class="stat"><h2>Fresh</h2><p>Forest Sourced</p></div>
 </div>
 </section>
 
 <!-- PRODUCTS -->
 <section class="section" id="products">
-
 <h2 class="title">Best Sellers</h2>
 
 <div class="products">
 
-<!-- PRODUCT 1 -->
 <div class="card">
 <div class="zoom-container">
 <img id="img1" src="hoeny.png">
@@ -319,56 +307,23 @@ No additives. Just natural honey.
 <div class="content">
 <h3>Raw Honey 250g</h3>
 <div class="price">₹299</div>
-<a class="order" href="https://wa.me/918605728989?text=I want 250g Honey">Order</a>
-</div>
-</div>
-
-<!-- PRODUCT 2 -->
-<div class="card">
-<div class="zoom-container">
-<img id="img2" src="images/honey-500g.jpg">
-</div>
-<div class="gallery">
-<img class="thumb" src="hoeny.png" onclick="changeImg('img2',this)">
-<img class="thumb" src="hoeny.png" onclick="changeImg('img2',this)">
-<img class="thumb" src="hoeny.png" onclick="changeImg('img2',this)">
-</div>
-<div class="content">
-<h3>Raw Honey 500g</h3>
-<div class="price">₹499</div>
-<a class="order" href="https://wa.me/918605728989?text=I want 500g Honey">Order</a>
-</div>
-</div>
-
-<!-- PRODUCT 3 -->
-<div class="card">
-<div class="zoom-container">
-<img id="img3" src="hoeny.png">
-</div>
-<div class="gallery">
-<img class="thumb" src="hoeny.png" onclick="changeImg('img3',this)">
-<img class="thumb" src="hoeny.png" onclick="changeImg('img3',this)">
-<img class="thumb" src="hoeny.png" onclick="changeImg('img3',this)">
-</div>
-<div class="content">
-<h3>Raw Honey 1kg</h3>
-<div class="price">₹899</div>
-<a class="order" href="https://wa.me/918605728989?text=I want 1kg Honey">Order</a>
+<a class="order" href="#">Order</a>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- STORY -->
+<!-- STORY (FIXED) -->
 <section class="section" id="story">
-
 <h2 class="title">The Journey Behind Madhuswarn</h2>
 
 <div class="story-wrap">
 
+<!-- LEFT IMAGE -->
 <img src="profile.jpeg" alt="Founder">
 
+<!-- RIGHT CONTENT -->
 <div>
 <h3>Founder Story</h3>
 <p>
@@ -382,6 +337,23 @@ Born in the Sahyadri region, the journey began with a passion for pure forest ho
 </div>
 
 </div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+<h2 class="title">Gallery</h2>
+
+<div class="gallery-grid">
+
+<img src="hoeny.png">
+<img src="hoeny.png">
+<img src="hoeny.png">
+<img src="hoeny.png">
+<img src="hoeny.png">
+<img src="profile.jpeg">
+<img src="awards.jpeg">
+<img src="banner.jpg">
 
 </div>
 </section>
@@ -397,14 +369,6 @@ Born in the Sahyadri region, the journey began with a passion for pure forest ho
 <script>
 function changeImg(id,el){
 document.getElementById(id).src = el.src;
-}
-
-function toggleLang(){
-document.querySelectorAll("[data-en]").forEach(el=>{
-let en = el.getAttribute("data-en");
-let mr = el.getAttribute("data-mr");
-el.innerText = (el.innerText === en) ? mr : en;
-});
 }
 </script>
 
