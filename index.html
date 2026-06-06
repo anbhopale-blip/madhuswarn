@@ -153,19 +153,30 @@ header{
  font-weight:600;
 }
 
-/* STORY */
+/* STORY FIXED (UPDATED) */
 .story-wrap{
  display:grid;
- grid-template-columns:1fr 1fr;
- gap:40px;
+ grid-template-columns:420px 1fr;
+ gap:50px;
  align-items:center;
 }
 
-.story-wrap img{
+/* LEFT IMAGE */
+.story-wrap > img{
  width:100%;
+ max-width:420px;
+ height:520px;
+ object-fit:cover;
  border-radius:20px;
+ box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
+/* RIGHT CONTENT */
+.story-wrap > div{
+ padding-right:10px;
+}
+
+/* AWARD */
 .award{
  margin-top:20px;
  background:white;
@@ -201,7 +212,7 @@ header{
  transform:scale(1.05);
 }
 
-/* LIGHTBOX POPUP */
+/* LIGHTBOX */
 .lightbox{
  display:none;
  position:fixed;
@@ -234,7 +245,6 @@ header{
  padding:18px;
  font-weight:600;
  cursor:pointer;
- background:#fff;
 }
 
 .faq-a{
@@ -260,6 +270,10 @@ footer{
 @media(max-width:768px){
 .hero h1{font-size:40px;}
 .story-wrap{grid-template-columns:1fr;}
+.story-wrap > img{
+ height:350px;
+ max-width:100%;
+}
 }
 </style>
 </head>
@@ -319,6 +333,7 @@ footer{
 <h2 class="title">The Journey Behind Madhuswarn</h2>
 
 <div class="story-wrap">
+
 <img src="profile.jpeg">
 
 <div>
@@ -340,11 +355,10 @@ footer{
 <h2 class="title">Gallery</h2>
 
 <div class="gallery-scroll">
-<img src="gallery/1.jpeg" onclick="openLightbox(this.src)">
-<img src="gallery/2.jpeg" onclick="openLightbox(this.src)">
-<img src="gallery/3.jpeg" onclick="openLightbox(this.src)">
-<img src="gallery/4.jpeg" onclick="openLightbox(this.src)">
- <img src="gallery/5.jpeg" onclick="openLightbox(this.src)">
+<img src="hoeny.png" onclick="openLightbox(this.src)">
+<img src="profile.jpeg" onclick="openLightbox(this.src)">
+<img src="awards.jpeg" onclick="openLightbox(this.src)">
+<img src="banner.jpg" onclick="openLightbox(this.src)">
 </div>
 </section>
 
@@ -377,12 +391,11 @@ footer{
 
 <script>
 
-// SECTION ANIMATION
+// SCROLL ANIMATION
 const sections = document.querySelectorAll(".section");
 window.addEventListener("scroll", () => {
  sections.forEach(sec => {
-  const top = sec.getBoundingClientRect().top;
-  if(top < window.innerHeight - 100){
+  if(sec.getBoundingClientRect().top < window.innerHeight - 100){
    sec.classList.add("show");
   }
  });
