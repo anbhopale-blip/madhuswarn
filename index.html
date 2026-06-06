@@ -65,11 +65,22 @@ header{
  font-weight:500;
 }
 
+.lang-btn{
+ margin-left:15px;
+ padding:6px 12px;
+ border:none;
+ border-radius:20px;
+ cursor:pointer;
+ background:#D4A017;
+ color:white;
+ font-weight:600;
+}
+
 .hero{
  height:100vh;
  background:
  linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url('banner.jpg?auto=format&fit=crop&w=1800&q=80');
+ url('banner.jpg');
  background-size:cover;
  background-position:center;
  display:flex;
@@ -80,26 +91,8 @@ url('banner.jpg?auto=format&fit=crop&w=1800&q=80');
  padding:20px;
 }
 
-.hero-content{
- max-width:850px;
-}
-
-.badge{
- display:inline-block;
- padding:10px 18px;
- border-radius:30px;
- background:rgba(255,255,255,.15);
-}
-
-.hero h1{
- font-size:70px;
- margin:20px 0;
-}
-
-.hero p{
- font-size:20px;
- margin-bottom:30px;
-}
+.hero h1{font-size:70px;}
+.hero p{font-size:20px;}
 
 .btn{
  display:inline-block;
@@ -110,15 +103,8 @@ url('banner.jpg?auto=format&fit=crop&w=1800&q=80');
  margin:5px;
 }
 
-.btn-gold{
- background:var(--gold);
- color:white;
-}
-
-.btn-white{
- background:white;
- color:#333;
-}
+.btn-gold{background:var(--gold);color:white;}
+.btn-white{background:white;color:#333;}
 
 .section{
  max-width:1200px;
@@ -194,80 +180,24 @@ url('banner.jpg?auto=format&fit=crop&w=1800&q=80');
  font-weight:600;
 }
 
-.story-image{
- width:100%;
- height:500px;
- object-fit:cover;
- border-radius:25px;
- margin-bottom:25px;
-}
-
-.story-card{
+/* STORY AWARD */
+.award-box{
  background:white;
- padding:40px;
- border-radius:25px;
- margin-bottom:40px;
+ padding:25px;
+ border-radius:20px;
  box-shadow:0 10px 30px rgba(0,0,0,.08);
+ margin-top:30px;
 }
 
-.features{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
- gap:25px;
-}
-
-.feature{
- background:white;
- padding:30px;
- border-radius:20px;
- text-align:center;
- box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.reviews{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
- gap:25px;
-}
-
-.review{
- background:white;
- padding:25px;
- border-radius:20px;
- box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.founder{
- display:grid;
- grid-template-columns:350px 1fr;
- gap:40px;
- align-items:center;
- margin-top:50px;
-}
-
-.founder img{
+.award-box img{
  width:100%;
- border-radius:25px;
+ border-radius:15px;
+ margin-top:10px;
 }
 
-.faq{
- max-width:900px;
- margin:auto;
-}
-
-.faq-item{
- background:white;
- padding:25px;
- border-radius:20px;
- margin-bottom:20px;
-}
-
-.cta{
- background:linear-gradient(135deg,var(--gold),#B98500);
- color:white;
- text-align:center;
- padding:60px 30px;
- border-radius:30px;
+/* BOTTLE PRODUCTS */
+.bottle-section{
+ margin-top:80px;
 }
 
 footer{
@@ -283,29 +213,18 @@ footer{
  bottom:20px;
  background:#25D366;
  color:white;
- text-decoration:none;
  padding:15px 22px;
  border-radius:50px;
  font-weight:600;
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
-
-.hero h1{
- font-size:42px;
-}
-
-.founder{
- grid-template-columns:1fr;
-}
-
-.nav{
- flex-direction:column;
- gap:10px;
-}
+.hero h1{font-size:42px;}
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -314,30 +233,27 @@ footer{
 
 <div>
 <a href="#products">Products</a>
-<a href="#story">Our Story</a>
+<a href="#story">Story</a>
 <a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
+
+<button class="lang-btn" onclick="toggleLang()">EN / मराठी</button>
 </div>
 </div>
 </header>
 
 <section class="hero">
 <div class="hero-content">
-<div class="badge">🌿 Pure • Natural • Trusted</div>
+<h1 data-en="Pure Sahyadri Forest Honey"
+    data-mr="शुद्ध सह्याद्री वन मध">
+Pure Sahyadri Forest Honey
+</h1>
 
-<h1>Pure Sahyadri Forest Honey</h1>
-
-<p>
-Naturally sourced from the forests and valleys of Maharashtra.
-No additives. No shortcuts. Just authentic honey.
+<p data-en="No additives. Just natural honey."
+   data-mr="कोणतेही मिश्रण नाही. फक्त शुद्ध नैसर्गिक मध.">
+No additives. Just natural honey.
 </p>
 
-<a href="#products" class="btn btn-gold">Shop Collection</a>
-
-<a href="https://wa.me/918605728989"
-class="btn btn-white">
-Order on WhatsApp
-</a>
+<a href="#products" class="btn btn-gold">Shop Now</a>
 </div>
 </section>
 
@@ -345,7 +261,7 @@ Order on WhatsApp
 
 <div class="stats">
 <div class="stat"><h2>100%</h2><p>Natural Honey</p></div>
-<div class="stat"><h2>500+</h2><p>Happy Customers</p></div>
+<div class="stat"><h2>500+</h2><p>Customers</p></div>
 <div class="stat"><h2>Pan India</h2><p>Delivery</p></div>
 <div class="stat"><h2>Fresh</h2><p>Forest Sourced</p></div>
 </div>
@@ -355,44 +271,63 @@ Order on WhatsApp
 <section class="section" id="products">
 
 <h2 class="title">Best Sellers</h2>
-<p class="subtitle">Choose your perfect honey pack</p>
 
 <div class="products">
 
 <div class="card">
-<img src="images/honey-250g.jpg" alt="250g Honey">
+<img src="images/honey-250g.jpg">
 <div class="content">
 <h3>Raw Honey 250g</h3>
 <div class="price">₹299</div>
-<a class="order"
-href="https://wa.me/918605728989?text=I want to order Raw Honey 250g">
-Order Now
-</a>
+<a class="order" href="https://wa.me/918605728989?text=I want 250g Honey">Order</a>
 </div>
 </div>
 
 <div class="card">
-<img src="images/honey-500g.jpg" alt="500g Honey">
+<img src="images/honey-500g.jpg">
 <div class="content">
 <h3>Raw Honey 500g</h3>
 <div class="price">₹499</div>
-<a class="order"
-href="https://wa.me/918605728989?text=I want to order Raw Honey 500g">
-Order Now
-</a>
+<a class="order" href="https://wa.me/918605728989?text=I want 500g Honey">Order</a>
 </div>
 </div>
 
 <div class="card">
-<img src="images/honey-1kg.jpg" alt="1kg Honey">
+<img src="images/honey-1kg.jpg">
 <div class="content">
 <h3>Raw Honey 1kg</h3>
 <div class="price">₹899</div>
-<a class="order"
-href="https://wa.me/918605728989?text=I want to order Raw Honey 1kg">
-Order Now
-</a>
+<a class="order" href="https://wa.me/918605728989?text=I want 1kg Honey">Order</a>
 </div>
+</div>
+
+</div>
+
+<!-- 🍯 BOTTLE COLLECTION -->
+<div class="bottle-section">
+
+<h2 class="title">Premium Bottle Collection</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="images/honey-bottle-1.jpg">
+<div class="content">
+<h3>Glass Bottle Honey</h3>
+<div class="price">₹599</div>
+<a class="order" href="#">Order</a>
+</div>
+</div>
+
+<div class="card">
+<img src="images/honey-bottle-2.jpg">
+<div class="content">
+<h3>Gift Pack Honey</h3>
+<div class="price">₹799</div>
+<a class="order" href="#">Order</a>
+</div>
+</div>
+
 </div>
 
 </div>
@@ -402,130 +337,35 @@ Order Now
 
 <h2 class="title">The Journey Behind Madhuswarn</h2>
 
-<div class="founder">
-<img
-src="profile.jpeg?auto=format&fit=crop&w=900&q=80"
-alt="Avadhut Yadav">
-
-<div>
-<h3>🌿 Meet The Honey Collector</h3>
-<br>
-
-<p>
-Hello, I'm Avadhut Yadav, founder of Madhuswarn Naturals and creator of Madhache Pole.
-</p>
-
-<br>
-
-<p>
-My journey began in the Sahyadri mountain ranges of Maharashtra, exploring forests and remote villages in search of authentic natural honey.
-</p>
-
-<br>
-
-<p>
-Every batch reflects the flowers, seasons, and landscapes of the region.
-</p>
-
-</div>
-
-</div>
-
-<br><br>
-
-<img src="images/collection-1.jpg" class="story-image">
-<img src="images/collection-2.jpg" class="story-image">
-<img src="images/collection-3.jpg" class="story-image">
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Why Customers Trust Us</h2>
-
-<div class="features">
-
-<div class="feature">
-<h3>🏔️ Sahyadri Sourced</h3>
-<p>Collected from forests and valleys of Western Maharashtra.</p>
-</div>
-
-<div class="feature">
-<h3>🐝 Traditional Collection</h3>
-<p>Working with experienced local honey collectors.</p>
-</div>
-
-<div class="feature">
-<h3>🌿 No Additives</h3>
-<p>No sugar, colours or preservatives.</p>
-</div>
-
-<div class="feature">
-<h3>📦 Pan India Delivery</h3>
-<p>Freshly packed and shipped across India.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="faq">
-
-<h2 class="title">Frequently Asked Questions</h2>
-
-<div class="faq">
-
-<div class="faq-item">
-<h3>Does natural honey crystallize?</h3>
-<p>Yes. Pure honey may naturally crystallize over time.</p>
-</div>
-
-<div class="faq-item">
-<h3>Do you add sugar?</h3>
-<p>No. Our honey contains no added sugar or preservatives.</p>
-</div>
-
-<div class="faq-item">
-<h3>How long does delivery take?</h3>
-<p>Usually 3–7 business days across India.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="contact">
-
-<div class="cta">
-
-<h2>Ready to Order?</h2>
-
-<p>
-Message us on WhatsApp and we'll confirm your order.
-</p>
-
-<br>
-
-<a href="https://wa.me/918605728989"
-class="btn btn-white">
-Chat on WhatsApp
-</a>
-
+<div class="award-box">
+<h3>🏆 Government Recognition</h3>
+<p>Honored for contribution to rural beekeeping & natural farming.</p>
+<img src="award.jpg">
 </div>
 
 </section>
 
 <footer>
 <h3>Madhuswarn Naturals</h3>
-<p>Pure Honey • Natural Living • Trusted Quality</p>
-<br>
-<p>📞 +91 86057 28989</p>
+<p>Pure Honey • Natural Living</p>
 </footer>
 
-<a class="float"
-href="https://wa.me/918605728989">
-💬 Order Now
-</a>
+<a class="float" href="https://wa.me/918605728989">💬 Order</a>
+
+<script>
+function toggleLang(){
+document.querySelectorAll("[data-en]").forEach(el=>{
+let mr = el.getAttribute("data-mr");
+let en = el.getAttribute("data-en");
+
+if(el.innerText === en){
+el.innerText = mr;
+}else{
+el.innerText = en;
+}
+});
+}
+</script>
 
 </body>
 </html>
