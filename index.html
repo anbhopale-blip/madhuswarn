@@ -6,12 +6,6 @@
 
 <title>Madhuswarn Naturals | Pure Sahyadri Forest Honey</title>
 
-<meta name="description"
-content="Premium raw honey sourced from the forests and valleys of the Sahyadri ranges in Maharashtra.">
-
-<meta name="keywords"
-content="Raw Honey, Forest Honey, Kolhapur Honey, Sahyadri Honey, Natural Honey">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -31,6 +25,7 @@ content="Raw Honey, Forest Honey, Kolhapur Honey, Sahyadri Honey, Natural Honey"
 body{
  background:var(--cream);
  color:#333;
+ scroll-behavior:smooth;
 }
 
 /* HEADER */
@@ -46,7 +41,7 @@ header{
 .nav{
  max-width:1200px;
  margin:auto;
- padding:18px 20px;
+ padding:18px;
  display:flex;
  justify-content:space-between;
  align-items:center;
@@ -72,7 +67,6 @@ header{
  linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
  url('banner.jpg');
  background-size:cover;
- background-position:center;
  display:flex;
  align-items:center;
  justify-content:center;
@@ -81,21 +75,17 @@ header{
  padding:20px;
 }
 
-.hero h1{font-size:70px;}
+.hero h1{font-size:65px;}
 .hero p{font-size:20px;}
 
 .btn{
  display:inline-block;
  padding:15px 30px;
  border-radius:50px;
- text-decoration:none;
- font-weight:600;
- margin-top:15px;
-}
-
-.btn-gold{
  background:var(--gold);
  color:white;
+ text-decoration:none;
+ font-weight:600;
 }
 
 /* SECTIONS */
@@ -103,25 +93,33 @@ header{
  max-width:1200px;
  margin:auto;
  padding:100px 20px;
+ opacity:0;
+ transform:translateY(40px);
+ transition:all 0.8s ease;
+}
+
+.section.show{
+ opacity:1;
+ transform:translateY(0);
 }
 
 .title{
  text-align:center;
  color:var(--green);
  font-size:42px;
- margin-bottom:20px;
+ margin-bottom:30px;
 }
 
 /* PRODUCTS */
 .products{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
- gap:30px;
+ gap:25px;
 }
 
 .card{
  background:white;
- border-radius:20px;
+ border-radius:18px;
  overflow:hidden;
  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
@@ -130,6 +128,7 @@ header{
  width:100%;
  height:280px;
  object-fit:cover;
+ cursor:pointer;
 }
 
 .content{
@@ -154,7 +153,7 @@ header{
  font-weight:600;
 }
 
-/* STORY FIXED */
+/* STORY */
 .story-wrap{
  display:grid;
  grid-template-columns:1fr 1fr;
@@ -181,17 +180,12 @@ header{
  border-radius:12px;
 }
 
-/* GALLERY - SCROLLER FIX */
-.gallery-section{
- padding-top:20px;
-}
-
+/* GALLERY */
 .gallery-scroll{
  display:flex;
  gap:15px;
  overflow-x:auto;
  padding:10px;
- scroll-snap-type:x mandatory;
 }
 
 .gallery-scroll img{
@@ -199,13 +193,60 @@ header{
  height:180px;
  object-fit:cover;
  border-radius:15px;
- flex:0 0 auto;
- scroll-snap-align:start;
+ cursor:pointer;
  transition:0.3s;
 }
 
 .gallery-scroll img:hover{
  transform:scale(1.05);
+}
+
+/* LIGHTBOX POPUP */
+.lightbox{
+ display:none;
+ position:fixed;
+ top:0;
+ left:0;
+ width:100%;
+ height:100%;
+ background:rgba(0,0,0,0.8);
+ justify-content:center;
+ align-items:center;
+ z-index:2000;
+}
+
+.lightbox img{
+ max-width:90%;
+ max-height:90%;
+ border-radius:15px;
+}
+
+/* FAQ */
+.faq-item{
+ background:white;
+ margin-bottom:15px;
+ border-radius:12px;
+ overflow:hidden;
+ box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.faq-q{
+ padding:18px;
+ font-weight:600;
+ cursor:pointer;
+ background:#fff;
+}
+
+.faq-a{
+ max-height:0;
+ overflow:hidden;
+ transition:0.3s;
+ padding:0 18px;
+}
+
+.faq-item.active .faq-a{
+ max-height:200px;
+ padding:18px;
 }
 
 /* FOOTER */
@@ -216,20 +257,8 @@ footer{
  padding:40px;
 }
 
-.float{
- position:fixed;
- right:20px;
- bottom:20px;
- background:#25D366;
- color:white;
- padding:15px 20px;
- border-radius:50px;
- font-weight:600;
-}
-
-/* RESPONSIVE */
 @media(max-width:768px){
-.hero h1{font-size:42px;}
+.hero h1{font-size:40px;}
 .story-wrap{grid-template-columns:1fr;}
 }
 </style>
@@ -244,16 +273,17 @@ footer{
 <a href="#products">Products</a>
 <a href="#story">Story</a>
 <a href="#gallery">Gallery</a>
+<a href="#faq">FAQ</a>
 </div>
 </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero section">
 <div>
 <h1>Pure Sahyadri Forest Honey</h1>
 <p>No additives. Just natural honey.</p>
-<a href="#products" class="btn btn-gold">Shop Now</a>
+<a href="#products" class="btn">Shop Now</a>
 </div>
 </section>
 
@@ -264,29 +294,20 @@ footer{
 <div class="products">
 
 <div class="card">
-<img src="hoeny.png">
+<img src="hoeny.png" onclick="openLightbox(this.src)">
 <div class="content">
 <h3>Raw Honey 250g</h3>
 <div class="price">₹299</div>
-<a class="order" href="#">Order</a>
+<a class="order">Order</a>
 </div>
 </div>
 
 <div class="card">
-<img src="hoeny.png">
+<img src="hoeny.png" onclick="openLightbox(this.src)">
 <div class="content">
 <h3>Raw Honey 500g</h3>
 <div class="price">₹499</div>
-<a class="order" href="#">Order</a>
-</div>
-</div>
-
-<div class="card">
-<img src="hoeny.png">
-<div class="content">
-<h3>Raw Honey 1kg</h3>
-<div class="price">₹899</div>
-<a class="order" href="#">Order</a>
+<a class="order">Order</a>
 </div>
 </div>
 
@@ -298,18 +319,15 @@ footer{
 <h2 class="title">The Journey Behind Madhuswarn</h2>
 
 <div class="story-wrap">
-
-<img src="profile.jpeg" alt="Founder">
+<img src="profile.jpeg">
 
 <div>
 <h3>Founder Story</h3>
-<p>
-Born in the Sahyadri region, the journey began with a passion for pure forest honey and supporting local beekeepers.
-</p>
+<p>Born in the Sahyadri region, focused on pure forest honey.</p>
 
 <div class="award">
 <h3>🏆 Government Recognition</h3>
-<p>Recognized for contribution to rural beekeeping & natural honey production.</p>
+<p>Recognized for rural beekeeping contribution.</p>
 <img src="awards.jpeg">
 </div>
 
@@ -317,17 +335,30 @@ Born in the Sahyadri region, the journey began with a passion for pure forest ho
 </div>
 </section>
 
-<!-- GALLERY (SCROLLER) -->
+<!-- GALLERY -->
 <section class="section" id="gallery">
 <h2 class="title">Gallery</h2>
 
 <div class="gallery-scroll">
-<img src="hoeny.png">
-<img src="profile.jpeg">
-<img src="awards.jpeg">
-<img src="banner.jpg">
-<img src="hoeny.png">
-<img src="hoeny.png">
+<img src="hoeny.png" onclick="openLightbox(this.src)">
+<img src="profile.jpeg" onclick="openLightbox(this.src)">
+<img src="awards.jpeg" onclick="openLightbox(this.src)">
+<img src="banner.jpg" onclick="openLightbox(this.src)">
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+<h2 class="title">FAQ</h2>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">Is your honey pure?</div>
+<div class="faq-a">Yes, it is 100% raw forest honey.</div>
+</div>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">Do you deliver?</div>
+<div class="faq-a">Yes, all over India within 3–7 days.</div>
 </div>
 
 </section>
@@ -338,7 +369,39 @@ Born in the Sahyadri region, the journey began with a passion for pure forest ho
 <p>Pure Honey • Natural Living</p>
 </footer>
 
-<a class="float" href="https://wa.me/918605728989">💬 Order</a>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<img id="lightboxImg">
+</div>
+
+<script>
+
+// SECTION ANIMATION
+const sections = document.querySelectorAll(".section");
+window.addEventListener("scroll", () => {
+ sections.forEach(sec => {
+  const top = sec.getBoundingClientRect().top;
+  if(top < window.innerHeight - 100){
+   sec.classList.add("show");
+  }
+ });
+});
+
+// LIGHTBOX
+function openLightbox(src){
+ document.getElementById("lightbox").style.display="flex";
+ document.getElementById("lightboxImg").src=src;
+}
+function closeLightbox(){
+ document.getElementById("lightbox").style.display="none";
+}
+
+// FAQ
+function toggleFAQ(el){
+ el.classList.toggle("active");
+}
+
+</script>
 
 </body>
 </html>
