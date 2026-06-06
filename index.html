@@ -88,21 +88,14 @@ header{
  font-weight:600;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section{
  max-width:1200px;
  margin:auto;
  padding:100px 20px;
- opacity:0;
- transform:translateY(40px);
- transition:all 0.8s ease;
 }
 
-.section.show{
- opacity:1;
- transform:translateY(0);
-}
-
+/* TITLE */
 .title{
  text-align:center;
  color:var(--green);
@@ -111,7 +104,7 @@ header{
 }
 
 /* =========================
-   PRODUCT SCROLLER (NEW)
+   PRODUCT SCROLLER
 ========================= */
 
 .product-scroll{
@@ -177,7 +170,7 @@ header{
  align-items:center;
 }
 
-.story-wrap > img{
+.story-wrap img{
  width:100%;
  height:520px;
  object-fit:cover;
@@ -238,6 +231,7 @@ footer{
 @media(max-width:768px){
 .hero h1{font-size:40px;}
 .story-wrap{grid-template-columns:1fr;}
+.story-wrap img{height:320px;}
 }
 </style>
 </head>
@@ -264,7 +258,7 @@ footer{
 </div>
 </section>
 
-<!-- PRODUCTS SCROLLER -->
+<!-- PRODUCTS -->
 <section class="section" id="products">
 <h2 class="title">Our Products</h2>
 
@@ -277,8 +271,8 @@ footer{
 <h3>Raw Honey 250g</h3>
 <div class="price">₹299</div>
 <a class="order"
-href="https://wa.me/918605728989?text=Hi! I want to order Raw Honey 250g (₹299)"
-target="_blank">
+target="_blank"
+href="https://wa.me/918605728989?text=Hi%20I%20want%20to%20order%20Raw%20Honey%20250g%20(₹299)">
 Order on WhatsApp
 </a>
 </div>
@@ -291,8 +285,8 @@ Order on WhatsApp
 <h3>Raw Honey 500g</h3>
 <div class="price">₹499</div>
 <a class="order"
-href="https://wa.me/918605728989?text=Hi! I want to order Raw Honey 500g (₹499)"
-target="_blank">
+target="_blank"
+href="https://wa.me/918605728989?text=Hi%20I%20want%20to%20order%20Raw%20Honey%20500g%20(₹499)">
 Order on WhatsApp
 </a>
 </div>
@@ -305,8 +299,8 @@ Order on WhatsApp
 <h3>Raw Honey 1kg</h3>
 <div class="price">₹899</div>
 <a class="order"
-href="https://wa.me/918605728989?text=Hi! I want to order Raw Honey 1kg (₹899)"
-target="_blank">
+target="_blank"
+href="https://wa.me/918605728989?text=Hi%20I%20want%20to%20order%20Raw%20Honey%201kg%20(₹899)">
 Order on WhatsApp
 </a>
 </div>
@@ -325,7 +319,7 @@ Order on WhatsApp
 
 <div>
 <h3>Founder Story</h3>
-<p>Born in Sahyadri region with passion for pure forest honey.</p>
+<p>Born in Sahyadri region, working with pure forest honey collectors.</p>
 
 <div class="award">
 <h3>🏆 Government Recognition</h3>
