@@ -110,18 +110,34 @@ header{
  margin-bottom:30px;
 }
 
-/* PRODUCTS */
-.products{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
- gap:25px;
+/* =========================
+   PRODUCT SCROLLER (NEW)
+========================= */
+
+.product-scroll{
+ display:flex;
+ gap:20px;
+ overflow-x:auto;
+ padding:10px;
+ scroll-snap-type:x mandatory;
+}
+
+.product-scroll::-webkit-scrollbar{
+ height:8px;
+}
+
+.product-scroll::-webkit-scrollbar-thumb{
+ background:var(--gold);
+ border-radius:10px;
 }
 
 .card{
+ min-width:300px;
  background:white;
  border-radius:18px;
  overflow:hidden;
  box-shadow:0 10px 25px rgba(0,0,0,.08);
+ scroll-snap-align:start;
 }
 
 .card img{
@@ -153,58 +169,26 @@ header{
  font-weight:600;
 }
 
-/* =========================
-   STORY (FIXED PREMIUM UI)
-========================= */
-
+/* STORY */
 .story-wrap{
  display:grid;
  grid-template-columns:420px 1fr;
- gap:60px;
+ gap:50px;
  align-items:center;
- background:white;
- padding:40px;
- border-radius:25px;
- box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-/* IMAGE FIXED SIZE */
-.story-img{
+.story-wrap > img{
  width:100%;
- height:480px;
+ height:520px;
  object-fit:cover;
  border-radius:20px;
- box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
-/* TEXT */
-.story-text h3{
- font-size:26px;
- margin-bottom:10px;
- color:#222;
-}
-
-.story-text p{
- line-height:1.6;
- color:#555;
- margin-bottom:15px;
-}
-
-/* AWARD BOX */
 .award{
  margin-top:20px;
- background:#fff7e6;
+ background:white;
  padding:20px;
  border-radius:15px;
- border:1px solid #f2d58a;
-}
-
-.award img{
- width:36%;
- height:302px;
- object-fit:cover;
- border-radius:12px;
- margin-top:10px;
 }
 
 /* GALLERY */
@@ -221,11 +205,6 @@ header{
  object-fit:cover;
  border-radius:15px;
  cursor:pointer;
- transition:0.3s;
-}
-
-.gallery-scroll img:hover{
- transform:scale(1.05);
 }
 
 /* LIGHTBOX */
@@ -248,33 +227,6 @@ header{
  border-radius:15px;
 }
 
-/* FAQ */
-.faq-item{
- background:white;
- margin-bottom:15px;
- border-radius:12px;
- overflow:hidden;
- box-shadow:0 5px 15px rgba(0,0,0,.05);
-}
-
-.faq-q{
- padding:18px;
- font-weight:600;
- cursor:pointer;
-}
-
-.faq-a{
- max-height:0;
- overflow:hidden;
- transition:0.3s;
- padding:0 18px;
-}
-
-.faq-item.active .faq-a{
- max-height:200px;
- padding:18px;
-}
-
 /* FOOTER */
 footer{
  background:#1f4f27;
@@ -285,15 +237,7 @@ footer{
 
 @media(max-width:768px){
 .hero h1{font-size:40px;}
-
-.story-wrap{
- grid-template-columns:1fr;
- padding:25px;
-}
-
-.story-img{
- height:320px;
-}
+.story-wrap{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -307,7 +251,6 @@ footer{
 <a href="#products">Products</a>
 <a href="#story">Story</a>
 <a href="#gallery">Gallery</a>
-<a href="#faq">FAQ</a>
 </div>
 </div>
 </header>
@@ -321,61 +264,75 @@ footer{
 </div>
 </section>
 
-<!-- PRODUCTS -->
+<!-- PRODUCTS SCROLLER -->
 <section class="section" id="products">
-<h2 class="title">Best Sellers</h2>
+<h2 class="title">Our Products</h2>
 
-<div class="products">
+<div class="product-scroll">
 
+<!-- PRODUCT 1 -->
 <div class="card">
 <img src="hoeny.png" onclick="openLightbox(this.src)">
 <div class="content">
 <h3>Raw Honey 250g</h3>
 <div class="price">₹299</div>
-<a class="order">Order</a>
+<a class="order"
+href="https://wa.me/918605728989?text=Hi! I want to order Raw Honey 250g (₹299)"
+target="_blank">
+Order on WhatsApp
+</a>
 </div>
 </div>
 
+<!-- PRODUCT 2 -->
 <div class="card">
 <img src="hoeny.png" onclick="openLightbox(this.src)">
 <div class="content">
 <h3>Raw Honey 500g</h3>
 <div class="price">₹499</div>
-<a class="order">Order</a>
+<a class="order"
+href="https://wa.me/918605728989?text=Hi! I want to order Raw Honey 500g (₹499)"
+target="_blank">
+Order on WhatsApp
+</a>
+</div>
+</div>
+
+<!-- PRODUCT 3 -->
+<div class="card">
+<img src="hoeny.png" onclick="openLightbox(this.src)">
+<div class="content">
+<h3>Raw Honey 1kg</h3>
+<div class="price">₹899</div>
+<a class="order"
+href="https://wa.me/918605728989?text=Hi! I want to order Raw Honey 1kg (₹899)"
+target="_blank">
+Order on WhatsApp
+</a>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- STORY (FIXED) -->
+<!-- STORY -->
 <section class="section" id="story">
 <h2 class="title">The Journey Behind Madhuswarn</h2>
 
 <div class="story-wrap">
 
-<img class="story-img" src="profile.jpeg">
+<img src="profile.jpeg">
 
-<div class="story-text">
+<div>
 <h3>Founder Story</h3>
-
-<p>
-Born in the Sahyadri region, this journey began with a deep passion for pure forest honey and supporting local beekeepers.
-Every drop reflects the forest ecosystem and seasonal flowers.
-</p>
-
-<p>
-We believe in natural, unprocessed honey directly sourced from traditional collectors.
-</p>
+<p>Born in Sahyadri region with passion for pure forest honey.</p>
 
 <div class="award">
 <h3>🏆 Government Recognition</h3>
-<p>Recognized for rural beekeeping contribution and natural honey production.</p>
-<img src="awards.jpeg">
+<p>Recognized for rural beekeeping contribution.</p>
 </div>
 
 </div>
-
 </div>
 </section>
 
@@ -386,26 +343,14 @@ We believe in natural, unprocessed honey directly sourced from traditional colle
 <div class="gallery-scroll">
 <img src="hoeny.png" onclick="openLightbox(this.src)">
 <img src="profile.jpeg" onclick="openLightbox(this.src)">
-<img src="awards.jpeg" onclick="openLightbox(this.src)">
 <img src="banner.jpg" onclick="openLightbox(this.src)">
 </div>
 </section>
 
-<!-- FAQ -->
-<section class="section" id="faq">
-<h2 class="title">FAQ</h2>
-
-<div class="faq-item" onclick="toggleFAQ(this)">
-<div class="faq-q">Is your honey pure?</div>
-<div class="faq-a">Yes, it is 100% raw forest honey.</div>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<img id="lightboxImg">
 </div>
-
-<div class="faq-item" onclick="toggleFAQ(this)">
-<div class="faq-q">Do you deliver?</div>
-<div class="faq-a">Yes, all over India within 3–7 days.</div>
-</div>
-
-</section>
 
 <!-- FOOTER -->
 <footer>
@@ -413,22 +358,7 @@ We believe in natural, unprocessed honey directly sourced from traditional colle
 <p>Pure Honey • Natural Living</p>
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<img id="lightboxImg">
-</div>
-
 <script>
-
-const sections = document.querySelectorAll(".section");
-window.addEventListener("scroll", () => {
- sections.forEach(sec => {
-  if(sec.getBoundingClientRect().top < window.innerHeight - 100){
-   sec.classList.add("show");
-  }
- });
-});
-
 function openLightbox(src){
  document.getElementById("lightbox").style.display="flex";
  document.getElementById("lightboxImg").src=src;
@@ -437,11 +367,6 @@ function openLightbox(src){
 function closeLightbox(){
  document.getElementById("lightbox").style.display="none";
 }
-
-function toggleFAQ(el){
- el.classList.toggle("active");
-}
-
 </script>
 
 </body>
