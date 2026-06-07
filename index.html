@@ -2,59 +2,42 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madhuswarn Naturals | Pure Sahyadri Forest Honey</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Madhuswarn Naturals</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-:root{
---gold:#C89B3C;
---green:#295236;
---cream:#FDF9F3;
---dark:#18241A;
-}
+:root{--gold:#C89B3C;--green:#295236;--cream:#FDF9F3;--dark:#18241A}
 *{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:var(--cream);color:#333}
 html{scroll-behavior:smooth}
-body{font-family:Poppins,sans-serif;background:var(--cream);color:#333;overflow-x:hidden}
-header{position:fixed;top:0;width:100%;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);z-index:999}
+header{position:fixed;top:0;width:100%;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(10px)}
 .nav{max-width:1200px;margin:auto;padding:18px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-size:30px;font-weight:700;color:var(--gold)}
 .nav a{text-decoration:none;color:#333;margin-left:18px;font-weight:600}
-.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('banner.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:76px;max-width:900px}
-.hero p{font-size:22px;margin:20px 0}
-.btn{display:inline-block;background:var(--gold);padding:15px 35px;border-radius:50px;color:#fff;text-decoration:none;font-weight:600}
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;background:#fff;padding:30px;text-align:center;font-weight:600}
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('banner.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:74px;max-width:900px}
+.btn{display:inline-block;background:var(--gold);color:#fff;padding:15px 35px;border-radius:40px;text-decoration:none;margin-top:20px}
 .section{max-width:1200px;margin:auto;padding:90px 20px}
 .title{font-family:'Cormorant Garamond',serif;font-size:54px;text-align:center;color:var(--green);margin-bottom:50px}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
-.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,.08);transition:.4s;position:relative}
-.card:hover{transform:translateY(-10px)}
-.badge{position:absolute;top:15px;left:15px;background:var(--gold);color:#fff;padding:8px 14px;border-radius:30px;font-size:12px}
-.card img{width:100%;height:320px;object-fit:cover}
-.content{padding:25px}
-.price{font-size:32px;color:var(--green);font-weight:700;margin:10px 0}
-.order{display:block;background:#25D366;color:#fff;text-decoration:none;text-align:center;padding:14px;border-radius:10px}
-.story{display:grid;grid-template-columns:350px 1fr;gap:50px;align-items:center}
-.story img,.award-img{width:100%;border-radius:20px}
-.story-box,.award-box,.review,.feature{background:#fff;padding:30px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
-.features,.reviews,.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:.3s}
+.card:hover{transform:translateY(-8px)}
+.card img{width:100%;height:320px;object-fit:cover;cursor:pointer}
+.content{padding:24px}
+.badge{display:inline-block;background:var(--gold);color:#fff;padding:6px 12px;border-radius:20px;font-size:12px}
+.price{font-size:30px;color:var(--green);font-weight:700;margin:10px 0}
+.features{list-style:none;margin:15px 0}
+.features li{margin:6px 0}
+.order{display:block;background:#25D366;color:#fff;text-decoration:none;padding:14px;text-align:center;border-radius:10px}
 .gallery{columns:3;column-gap:18px}
-.gallery img{width:100%;margin-bottom:18px;border-radius:18px;transition:.3s}
-.gallery img:hover{transform:scale(1.03)}
-iframe{width:100%;height:280px;border:none;border-radius:18px}
-details{background:#fff;padding:20px;border-radius:15px;margin-bottom:15px}
-footer{background:var(--dark);color:#fff;text-align:center;padding:60px 20px}
-.whatsapp{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:30px;z-index:999}
-.reveal{opacity:0;transform:translateY(40px);transition:1s}
-.reveal.active{opacity:1;transform:none}
-@media(max-width:768px){
-.hero h1{font-size:42px}
-.trust{grid-template-columns:repeat(2,1fr)}
-.story{grid-template-columns:1fr}
-.gallery{columns:1}
-}
+.gallery img{width:100%;margin-bottom:18px;border-radius:18px;cursor:pointer}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px}
+.video-thumb{position:relative;cursor:pointer}
+.video-thumb iframe{width:100%;height:260px;border:none;border-radius:18px}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:5000;justify-content:center;align-items:center;padding:20px}
+.lightbox img,.lightbox iframe{max-width:95%;max-height:90%;border:none;border-radius:12px}
+.close{position:absolute;top:20px;right:30px;color:#fff;font-size:40px;cursor:pointer}
+@media(max-width:768px){.hero h1{font-size:42px}.gallery{columns:1}}
 </style>
 </head>
 <body>
@@ -64,10 +47,8 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:60px 20px}
 <div class="logo">🍯 Madhuswarn</div>
 <div>
 <a href="#products">Products</a>
-<a href="#story">Story</a>
 <a href="#videos">Videos</a>
 <a href="#gallery">Gallery</a>
-<a href="#faq">FAQ</a>
 </div>
 </div>
 </header>
@@ -75,111 +56,108 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:60px 20px}
 <section class="hero">
 <div>
 <h1>Nature's Liquid Gold From The Sahyadri Forests</h1>
-<p>Raw • Unprocessed • Sustainably Harvested</p>
-<a href="#products" class="btn">Shop Now</a>
+<p>Pure • Raw • Unprocessed</p>
+<a class="btn" href="#products">Shop Now</a>
 </div>
 </section>
 
-<section class="trust">
-<div>🍯 100% Raw Honey</div>
-<div>🌿 No Added Sugar</div>
-<div>🐝 Forest Sourced</div>
-<div>🚚 Pan India Delivery</div>
-</section>
-
-<section class="section reveal" id="products">
+<section class="section" id="products">
 <h2 class="title">Featured Products</h2>
 <div class="products">
-<div class="card"><span class="badge">Best Seller</span><img src="hoeny.png"><div class="content"><h3>Raw Honey 250g</h3><div class="price">₹299</div><p>Pure forest honey with rich aroma.</p><br><a class="order" href="https://wa.me/918605728989">Order Now</a></div></div>
-<div class="card"><span class="badge">Popular</span><img src="hoeny.png"><div class="content"><h3>Raw Honey 500g</h3><div class="price">₹499</div><p>Perfect for daily family use.</p><br><a class="order" href="https://wa.me/918605728989">Order Now</a></div></div>
-<div class="card"><span class="badge">Value Pack</span><img src="hoeny.png"><div class="content"><h3>Raw Honey 1kg</h3><div class="price">₹899</div><p>Best value for honey lovers.</p><br><a class="order" href="https://wa.me/918605728989">Order Now</a></div></div>
+
+<div class="card">
+<img src="hoeny.png" onclick="openImage(this.src)">
+<div class="content">
+<span class="badge">Best Seller</span>
+<h3>Raw Honey 250g</h3>
+<div class="price">₹299</div>
+<ul class="features">
+<li>✓ 100% Raw Honey</li>
+<li>✓ No Added Sugar</li>
+<li>✓ Rich Floral Aroma</li>
+<li>✓ Forest Harvested</li>
+</ul>
+<a class="order" href="https://wa.me/918605728989">Order on WhatsApp</a>
+</div>
+</div>
+
+<div class="card">
+<img src="hoeny.png" onclick="openImage(this.src)">
+<div class="content">
+<span class="badge">Popular</span>
+<h3>Raw Honey 500g</h3>
+<div class="price">₹499</div>
+<ul class="features">
+<li>✓ Family Pack</li>
+<li>✓ Unprocessed</li>
+<li>✓ Natural Sweetener</li>
+<li>✓ Premium Quality</li>
+</ul>
+<a class="order" href="https://wa.me/918605728989">Order on WhatsApp</a>
+</div>
+</div>
+
+<div class="card">
+<img src="hoeny.png" onclick="openImage(this.src)">
+<div class="content">
+<span class="badge">Value Pack</span>
+<h3>Raw Honey 1kg</h3>
+<div class="price">₹899</div>
+<ul class="features">
+<li>✓ Best Value</li>
+<li>✓ Pure Forest Honey</li>
+<li>✓ Long Lasting</li>
+<li>✓ Direct From Source</li>
+</ul>
+<a class="order" href="https://wa.me/918605728989">Order on WhatsApp</a>
+</div>
+</div>
+
 </div>
 </section>
 
-<section class="section reveal">
-<h2 class="title">Why Choose Madhuswarn?</h2>
-<div class="features">
-<div class="feature"><h3>🌿 Pure & Natural</h3><p>No additives or preservatives.</p></div>
-<div class="feature"><h3>🐝 Forest Harvested</h3><p>Sourced from Sahyadri forests.</p></div>
-<div class="feature"><h3>🤝 Supporting Communities</h3><p>Directly connected with collectors.</p></div>
-</div>
-</section>
-
-<section class="section reveal" id="story">
-<h2 class="title">Our Story</h2>
-<div class="story">
-<img src="profile.jpeg">
-<div class="story-box">
-<h3>From Forest To Your Home</h3><br>
-<p>Madhuswarn Naturals was founded to bring authentic forest honey directly from traditional honey collectors to families across India. Every bottle supports sustainable harvesting and local communities.</p>
-</div>
-</div>
-</section>
-
-<section class="section reveal">
-<h2 class="title">Awards & Recognition</h2>
-<div class="story">
-<img src="awards.jpeg" class="award-img">
-<div class="award-box">
-<h3>Recognized For Rural Entrepreneurship</h3><br>
-<p>Celebrating our contribution towards sustainable livelihoods and natural honey production.</p>
-</div>
-</div>
-</section>
-
-<section class="section reveal" id="videos">
+<section class="section" id="videos">
 <h2 class="title">Watch Our Journey</h2>
-<div class="videos">
-<iframe src="https://www.youtube.com/embed/teaJ_6oMEPk" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/zhwlNS3nw9s" allowfullscreen></iframe>
+<div class="video-grid">
+<div class="video-thumb" onclick="openVideo('https://www.youtube.com/embed/teaJ_6oMEPk')">
+<iframe src="https://www.youtube.com/embed/teaJ_6oMEPk"></iframe>
+</div>
+<div class="video-thumb" onclick="openVideo('https://www.youtube.com/embed/zhwlNS3nw9s')">
+<iframe src="https://www.youtube.com/embed/zhwlNS3nw9s"></iframe>
+</div>
 </div>
 </section>
 
-<section class="section reveal" id="gallery">
+<section class="section" id="gallery">
 <h2 class="title">Gallery</h2>
 <div class="gallery">
-<img src="banner.jpg">
-<img src="hoeny.png">
-<img src="profile.jpeg">
-<img src="awards.jpeg">
-<img src="hoeny.png">
-<img src="banner.jpg">
+<img src="banner.jpg" onclick="openImage(this.src)">
+<img src="profile.jpeg" onclick="openImage(this.src)">
+<img src="awards.jpeg" onclick="openImage(this.src)">
+<img src="hoeny.png" onclick="openImage(this.src)">
+<img src="banner.jpg" onclick="openImage(this.src)">
+<img src="hoeny.png" onclick="openImage(this.src)">
 </div>
 </section>
 
-<section class="section reveal">
-<h2 class="title">Customer Reviews</h2>
-<div class="reviews">
-<div class="review">★★★★★<br><br>Amazing taste and quality.</div>
-<div class="review">★★★★★<br><br>Feels truly natural and authentic.</div>
-<div class="review">★★★★★<br><br>Excellent packaging and service.</div>
+<div id="lightbox" class="lightbox">
+<span class="close" onclick="closeBox()">×</span>
+<div id="viewer"></div>
 </div>
-</section>
-
-<section class="section reveal" id="faq">
-<h2 class="title">FAQ</h2>
-<details><summary>Is the honey raw?</summary><p>Yes, minimally filtered and unprocessed.</p></details>
-<details><summary>Any added sugar?</summary><p>No. 100% pure honey.</p></details>
-<details><summary>How should I store it?</summary><p>Store in a cool dry place.</p></details>
-</section>
-
-<footer>
-<h3>Madhuswarn Naturals</h3>
-<p>Pure Honey • Natural Living • Sahyadri Forests</p>
-<p>WhatsApp: +91 86057 28989</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/918605728989">💬</a>
 
 <script>
-const reveals=document.querySelectorAll('.reveal');
-window.addEventListener('scroll',()=>{
-reveals.forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){
-el.classList.add('active');
+function openImage(src){
+document.getElementById('lightbox').style.display='flex';
+document.getElementById('viewer').innerHTML='<img src="'+src+'">';
 }
-});
-});
+function openVideo(src){
+document.getElementById('lightbox').style.display='flex';
+document.getElementById('viewer').innerHTML='<iframe width="1000" height="560" src="'+src+'?autoplay=1" allowfullscreen></iframe>';
+}
+function closeBox(){
+document.getElementById('lightbox').style.display='none';
+document.getElementById('viewer').innerHTML='';
+}
 </script>
 
 </body>
